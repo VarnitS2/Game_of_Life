@@ -8,8 +8,8 @@ import javafx.scene.shape.Rectangle
 
 class GameOfLife : GameApplication() {
 
-    private val gridWidth: Int = 200
-    private val gridHeight: Int = 200
+    private val gridWidth: Int = 400
+    private val gridHeight: Int = 400
     private lateinit var world: World
 
     enum class Type {
@@ -29,7 +29,8 @@ class GameOfLife : GameApplication() {
     override fun initGame() {
         run({
             spawnCells()
-        }, Duration.seconds(1.0))
+            world.update()
+        }, Duration.seconds(0.5))
     }
 
     private fun spawnCells() {
@@ -40,6 +41,12 @@ class GameOfLife : GameApplication() {
                     .type(Type.CELL)
                     .at(cell.getX().toDouble(), cell.getY().toDouble())
                     .viewWithBBox(Rectangle(cell.getCellSize().toDouble(), cell.getCellSize().toDouble(), Color.BLACK))
+                    .buildAndAttach()
+            } else {
+                entityBuilder()
+                    .type(Type.CELL)
+                    .at(cell.getX().toDouble(), cell.getY().toDouble())
+                    .viewWithBBox(Rectangle(cell.getCellSize().toDouble(), cell.getCellSize().toDouble(), Color.WHITE))
                     .buildAndAttach()
             }
         }

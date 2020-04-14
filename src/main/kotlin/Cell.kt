@@ -21,7 +21,23 @@ class Cell(xPos: Int, yPos: Int) {
         return alive
     }
 
+    fun kill() {
+        alive = false
+    }
+
     fun activateCell() {
         alive = true
+    }
+
+    fun incrementAliveNeighborCount() {
+        aliveNeighborCount++
+    }
+
+    fun resetAliveNeighborCount() {
+        aliveNeighborCount = 0
+    }
+
+    fun getAliveNeighborCount(): Int {
+        return aliveNeighborCount
     }
 }
