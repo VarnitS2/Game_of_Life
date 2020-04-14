@@ -30,7 +30,7 @@ class GameOfLife : GameApplication() {
         run({
             spawnCells()
             world.update()
-        }, Duration.seconds(0.5))
+        }, Duration.seconds(2.0))
     }
 
     private fun spawnCells() {

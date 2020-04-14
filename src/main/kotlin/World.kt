@@ -106,6 +106,12 @@ class World(gridWidth: Int, gridHeight: Int) {
         getCellAtPos(3 * cellSize, 4 * cellSize).activateCell()
         getCellAtPos(4 * cellSize, 4 * cellSize).activateCell()
 
+        // Another Cell Block
+        getCellAtPos(30 * cellSize, 5 * cellSize).activateCell()
+        getCellAtPos(31 * cellSize, 5 * cellSize).activateCell()
+        getCellAtPos(30 * cellSize, 6 * cellSize).activateCell()
+        getCellAtPos(31 * cellSize, 6 * cellSize).activateCell()
+
         // A Blinker
         getCellAtPos(8 * cellSize, 8 * cellSize).activateCell()
         getCellAtPos(9 * cellSize, 8 * cellSize).activateCell()
@@ -122,13 +128,60 @@ class World(gridWidth: Int, gridHeight: Int) {
         activateRandomCells()
     }
 
+    private fun gosperGliderGun() {
+        // First Cell Block
+        getCellAtPos(2 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(3 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(2 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(3 * cellSize, 10 * cellSize).activateCell()
+
+        // Second Cell Block
+        getCellAtPos(36 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(37 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(36 * cellSize, 8 * cellSize).activateCell()
+        getCellAtPos(37 * cellSize, 8 * cellSize).activateCell()
+
+        // Left Something
+        getCellAtPos(12 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(12 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(12 * cellSize, 11 * cellSize).activateCell()
+        getCellAtPos(13 * cellSize, 8 * cellSize).activateCell()
+        getCellAtPos(13 * cellSize, 12 * cellSize).activateCell()
+        getCellAtPos(14 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(15 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(14 * cellSize, 13 * cellSize).activateCell()
+        getCellAtPos(15 * cellSize, 13 * cellSize).activateCell()
+        getCellAtPos(16 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(17 * cellSize, 8 * cellSize).activateCell()
+        getCellAtPos(17 * cellSize, 12 * cellSize).activateCell()
+        getCellAtPos(18 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(18 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(18 * cellSize, 11 * cellSize).activateCell()
+        getCellAtPos(19 * cellSize, 10 * cellSize).activateCell()
+
+        // Right Something
+        getCellAtPos(22 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(23 * cellSize, 7 * cellSize).activateCell()
+        getCellAtPos(22 * cellSize, 8 * cellSize).activateCell()
+        getCellAtPos(23 * cellSize, 8 * cellSize).activateCell()
+        getCellAtPos(22 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(23 * cellSize, 9 * cellSize).activateCell()
+        getCellAtPos(24 * cellSize, 6 * cellSize).activateCell()
+        getCellAtPos(24 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(26 * cellSize, 6 * cellSize).activateCell()
+        getCellAtPos(26 * cellSize, 10 * cellSize).activateCell()
+        getCellAtPos(26 * cellSize, 5 * cellSize).activateCell()
+        getCellAtPos(26 * cellSize, 11 * cellSize).activateCell()
+    }
+
     fun setup() {
         for (cellX in 0..widthCells) {
             for (cellY in 0..heightCells) {
                 cells.add(Cell(cellX * cellSize, cellY * cellSize))
             }
         }
-        activateCertainCells()
+        // activateCertainCells()
+        gosperGliderGun()
     }
 
     fun update() {
